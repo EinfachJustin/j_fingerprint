@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fingerprint Scanner</title>
+</head>
+<body>
+    <div id="scanner-container" style="display: none;">
+        <!-- Scanner View -->
+        <div id="scanner-view" class="view">
+            <div class="header">
+                <div class="header-icon">🔍</div>
+                <div class="header-title">FINGERPRINT SCANNER</div>
+            </div>
+            <div class="content">
+                <div class="scan-area">
+                    <div class="fingerprint-zone" id="fingerprint-zone">
+                        <div class="fingerprint-gif" id="fingerprint-gif">
+                            <div class="gif-placeholder">🔍</div>
+                        </div>
+                        <div class="fingerprint-symbol">👆</div>
+                        <div class="scan-lines">
+                            <div class="scan-line"></div>
+                            <div class="scan-line"></div>
+                            <div class="scan-line"></div>
+                        </div>
+                    </div>
+                    <div class="scan-text" id="scan-text">Finger auf Scanner legen</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report View -->
+        <div id="report-view" class="view" style="display: none;">
+            <div class="header">
+                <div class="header-icon">📋</div>
+                <div class="header-title">SCAN REPORT</div>
+            </div>
+            <div class="content">
+                <div class="report-data">
+                    <div class="data-row">
+                        <span class="data-label">ID:</span>
+                        <span class="data-value copyable" id="data-id" onclick="copyToClipboard('data-id')" title="Klicken zum Kopieren">-</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Vorname:</span>
+                        <span class="data-value copyable" id="data-firstname" onclick="copyToClipboard('data-firstname')" title="Klicken zum Kopieren">-</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Nachname:</span>
+                        <span class="data-value copyable" id="data-lastname" onclick="copyToClipboard('data-lastname')" title="Klicken zum Kopieren">-</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Geburtsdatum:</span>
+                        <span class="data-value copyable" id="data-dob" onclick="copyToClipboard('data-dob')" title="Klicken zum Kopieren">-</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Geschlecht:</span>
+                        <span class="data-value copyable" id="data-gender" onclick="copyToClipboard('data-gender')" title="Klicken zum Kopieren">-</span>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="close-button" onclick="closeScanner()">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
