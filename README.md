@@ -43,28 +43,7 @@ Use translation keys in the script; the notify wrapper will pick the current lan
 Edit `Config.Notify.type` to switch between `esx` (uses `ESX.ShowNotification`) or `chat` (uses `chat:addMessage`).
 If you have a custom notification resource, set `Config.Notify.type = 'custom'` and update `client/utils.lua` to call your export/event.
 
-## Making it public on GitHub
-1. Initialize a git repo in the `j_fingerprint` folder:
-
-```pwsh
-cd path\to\j_fingerprint
-git init
-git add .
-git commit -m "Initial import of j_fingerprint"
-```
-
-2. Create a repo on GitHub and follow the instructions, for example:
-
-```pwsh
-git remote add origin https://github.com/EinfachJustin/j_fingerprint.git
-git branch -M main
-git push -u origin main
-```
-
-## Notes
-- I kept server/client behavior similar to the original but wired items/config/locales so it's easy to change.
-- If your server uses QBCore or another framework, you can adapt the notify wrapper and item registration accordingly.
-
 ## Hilfe auf Deutsch
 - `config.lua` anpassen um Itemname, Sprache und Benachrichtigungssystem zu ändern.
 - Übersetzungen in `locales/*.lua` anlegen (z.B. `de.lua` ist bereits vorhanden).
+
